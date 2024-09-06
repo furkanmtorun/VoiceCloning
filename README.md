@@ -8,8 +8,8 @@
 |---|---|
 | Web via Cloudfront | https://dzpqh0mwojrs9.cloudfront.net/ |
 | Web via S3 | http://voicecloning-website.s3-website.eu-central-1.amazonaws.com/ |
-| API via Cloudfront | http://d20hbh58zkqtxv.cloudfront.net/ |
-| API via APIGateway | https://l481bschml.execute-api.eu-central-1.amazonaws.com/api |
+| API via Cloudfront | http://d20hbh58zkqtxv.cloudfront.net/api/docs |
+| API via APIGateway | https://l481bschml.execute-api.eu-central-1.amazonaws.com/api/docs |
 
 <br>
 
