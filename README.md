@@ -26,13 +26,12 @@
 
 ### 3. Terraform
 
-**1. How to deploy?**
-
+**How to deploy?**
 ```bash
 chmod +x 'scripts/provision_the_project.sh' && ./scripts/provision_the_project.sh
 ```
 
-**2. How to destroy?**
+**How to destroy?**
 ```bash
 brew install cloud-nuke
 cloud-nuke aws --region eu-central-1
