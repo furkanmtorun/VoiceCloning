@@ -1,8 +1,8 @@
-# 🤖🗣️ Voice Cloning
+# 🤖 Voice Cloning
 - Users upload the audio records and clone the voice for given text.
 - Learning, having fun and hands-on experience with AWS & Terraform & Serverless architecture.
 
-## 📄 Resources
+## 🌐 Resources
 
 | Resource | Link |
 |---|---|
@@ -16,7 +16,7 @@
 
 ### 1. Architecture
 
-- TBA!
+![Architecture.png](Architecture.png)
 
 ### 2. AWS
 
@@ -29,7 +29,7 @@
 **1. How to deploy?**
 
 ```bash
-chmod +x 'scripts/provision_the_project.sh.sh' && ./scripts/provision_the_project.sh.sh
+chmod +x 'scripts/provision_the_project.sh' && ./scripts/provision_the_project.sh
 ```
 
 **2. How to destroy?**
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 python entrypoint.py
 ```
 
-### Api
+### 5. API
 ```bash
 # Local setup
 cd api
