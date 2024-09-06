@@ -17,7 +17,7 @@
 
 ### 1. Architecture
 
-![Architecture.png](Architecture.png)
+![Architecture.png](./assets/architecture.png)
 
 ### 2. AWS
 
@@ -57,17 +57,11 @@ cd api
 conda activate VoiceCloning
 pip install -r requirements.txt
 uvicorn main:app --reload
-
-# TODO: Move this to api/main.py via boto3:
-aws batch submit-job \
-  --job-name "demo-$(uuidgen | tr -d '-')" \
-  --job-queue batch-fargate-voicecloning-job-queue \
-  --job-definition aws-batch-job-definition-for-fargate-for-voicecloning \
-  --container-overrides '{"environment":[{"name":"PROJECT_ID","value":"730540022af3402482dddc7180204fbc"}]}'
 ```
 
+![API by FastAPI](./assets/api.png)
+
 ## 🛠️ Notes
-- Search on `HARDCODED` on the code base and replace them accordingly.
 - If the Cloudfront seems outdated, introduce "Invalidations" with a path:
   ```bash
   # website
