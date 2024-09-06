@@ -114,7 +114,7 @@ function createProjectCard(project) {
             <div class="card-content">
                 <h3>${project.title}</h3>
                 <p>Quality: ${project.quality} | ${project.created_at}</p>
-                <p class="progress-label ${project.progress}">${project.progress}</p>
+                <!-- <p class="progress-label ${project.progress}">${project.progress}</p> -->
             </div>
         </a>
     `;
@@ -130,7 +130,7 @@ function displayProjectPopup(project) {
             <p><b>Quality:</b> ${project.quality}</p>
             <p><b>Created at:</b> ${project.created_at}</p>
             <p><b>Description:</b> ${project.description}</p>
-            <p><b>Progress:</b> ${project.progress}</p>
+            <!-- <p><b>Progress:</b> ${project.progress}</p> -->
             <p><b>Uploaded audio files:</b> ${project.audio_files}</p>
             <p><b>Cloned voice:</b></p>
             <audio controls autoplay>

@@ -34,9 +34,10 @@ def download_s3_folder(s3_folder, local_dir, bucket_name=S3_BUCKET_NAME_FOR_INPU
             print(f"Downloading {s3_key} to {local_file_path}")
             S3_CLIENT.download_file(bucket_name, s3_key, local_file_path)
 
+
 def upload_wav_to_s3(local_file_path, s3_key, bucket_name=S3_BUCKET_NAME_FOR_OUTPUT):
     """Upload a .wav file to an S3 bucket.
-    
+
     :param local_file_path: Local path to the .wav file
     :param bucket_name: Name of the S3 bucket
     :param s3_key: S3 key (path) where the file will be uploaded
@@ -46,6 +47,7 @@ def upload_wav_to_s3(local_file_path, s3_key, bucket_name=S3_BUCKET_NAME_FOR_OUT
         print(f"File {local_file_path} uploaded to s3://{bucket_name}/{s3_key}")
     except Exception as e:
         print(f"Error uploading file: {e}")
+
 
 def get_project_details_by_id(project_id: str) -> Dict[str, str]:
     """Return project details dictionary for given project ID."""

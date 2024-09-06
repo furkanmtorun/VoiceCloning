@@ -6,7 +6,8 @@ import warnings
 from distutils.dir_util import copy_tree
 
 import torchaudio
-from aws_utils import download_s3_folder, get_project_details_by_id, upload_wav_to_s3
+from aws_utils import (download_s3_folder, get_project_details_by_id,
+                       upload_wav_to_s3)
 from tortoise.api import TextToSpeech, classify_audio_clip
 from tortoise.utils.audio import load_audio, load_voice
 
@@ -86,6 +87,7 @@ if __name__ == "__main__":
         TEXT = project_details["text"]
         download_s3_folder(s3_folder=PROJECT_ID, local_dir=f"./{PROJECT_ID}")
         import os
+
         print(os.listdir())
         print(os.listdir(f"./{PROJECT_ID}"))
         print(os.listdir(f"./{PROJECT_ID}"))
@@ -124,11 +126,13 @@ if __name__ == "__main__":
     )
     model.load_custom_voices()
     model.train_and_export(output_path=CUSTOM_VOICE_OUTPUT_PATH)
-    
+
     if RUNNING_ENV != "local":
         # Fargate over AWS Batch
-        upload_wav_to_s3(local_file_path=f"{CUSTOM_VOICE_OUTPUT_PATH}/{PROJECT_ID}.wav", s3_key=f"{PROJECT_ID}.wav")
-    
+        upload_wav_to_s3(
+            local_file_path=f"{CUSTOM_VOICE_OUTPUT_PATH}/{PROJECT_ID}.wav",
+            s3_key=f"{PROJECT_ID}.wav",
+        )
 
     ## DIAGNOSIS OF THE VOICE | SECOND FEATURE
     # is_this_from_tortoise(voice_path="/Users/furkan/Desktop/experiments/input/clip1.wav", models_folder_path=MODELS_FOLDER_PATH)
