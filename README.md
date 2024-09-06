@@ -11,6 +11,7 @@
 | API via Cloudfront | http://d20hbh58zkqtxv.cloudfront.net/ |
 | API via APIGateway | https://l481bschml.execute-api.eu-central-1.amazonaws.com/api |
 
+<br>
 
 ## 🚀 Tech Stack
 
