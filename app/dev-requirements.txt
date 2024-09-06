@@ -1,0 +1,5 @@
+black
+isort
+
+# api
+uvicorn==0.27.1 # we use `mangum` for lambda

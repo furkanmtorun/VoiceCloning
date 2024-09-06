@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceCloning</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css?version=103">
+</head>
+<body>
+
+<h1>VoiceCloning | Create</h1>
+<hr>
+
+<div id="projectFormContainer">
+
+    <h2>Create a new project</h2>
+    <list>Here, what you will need to clone a voice:
+        <li>Upload 5 files and each lasts for 6-10 seconds</li>
+        <li>Total size should <b>NOT exceed 10MB</b></li>
+        <li>Audio records in <b>'.mp3'</b> format</li>
+        <li>Your text can contain max. 255 characters</li>
+    </list>
+    <br>
+    <hr>
+
+    <form id="projectForm">
+        <br>
+        <input type="text" name="title" placeholder="Title" minlength="3" maxlength="15" required>
+        <div class="border-for-upload">
+            <label for="audio_files">Upload your audio records:</label>
+            <input type="file" id="audio_files" name="audio_files" accept=".mp3" multiple required> <br><br>
+        </div>
+        <input type="text" name="text" placeholder="Text to be spoken in 255 characters" minlength="10" maxlength="255" required>
+        <select name="quality">
+            <option value="ultra_fast">Voice quality: Ultra fast</option>
+            <option value="fast" selected>Voice quality: Fast (default)</option>
+            <option value="standard">Voice quality: Standard</option>
+            <option value="high_quality">Voice quality: High quality</option>
+        </select>
+        <textarea type="text" name="description" placeholder="Description (optional)"></textarea>
+        <button id="submitButton" type="submit" class="create_project disabled">Clone a voice!</button>
+        <br>
+    </form>
+
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+    VoiceCloning by <a href="https://furkanmtorun.github.io" class="link" target="_blank">@furkanmtorun</a> | 2024
+</div>
+
+<script src="js.js?version=104"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Ignore all files except the following
+*
+!model_files/
+!tortoise/
+!__init__.py
+!dev-requirements.txt
+!entrypoint.py
+!aws_utils.py
+!pip_freeze.txt
+!requirements.txt

@@ -1,0 +1,67 @@
+name: Formatting and security checks
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    # Check secrets 
+    - name: Detecting secrets
+      run: |
+        pip install detect-secrets
+        detect-secrets scan --all-files
+
+    # Check for Terraform and IaC
+    - name: Terraform and Infrastruce as Code Checks
+      run: |
+        wget https://github.com/tfsec/tfsec/releases/download/v0.58.9/tfsec-linux-amd64
+        chmod +x tfsec-linux-amd64
+        sudo mv tfsec-linux-amd64 /usr/local/bin/tfsec
+        pip install checkov
+        tfsec --force-all-dirs .
+        checkov -d .
+
+    # Set up Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.10'
+        cache: "pip"
+
+    # Install Python dependencies
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install black isort bandit safety
+
+    - name: Check formatting with Black
+      run: black --check .
+    - name: Check imports with isort
+      run: isort --check-only .
+    - name: Run bandit for vulnerabilities
+      run: |
+        bandit --recursive . --exit-zero
+    - name: Run safety for security checks for packages
+      run: |
+        safety check -r requirements.txt
+        safety check
+
+    # Install Node.js for Prettier on HTML, CSS, and JavaScript
+    - name: Set up Node.js for formatting & linting
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # Use Node.js 14.x
+
+    - name: Check formatting with Prettier
+      run: |
+        npm install --save-dev --save-exact prettier
+        npx prettier --check "**/*.{html,css,js}"

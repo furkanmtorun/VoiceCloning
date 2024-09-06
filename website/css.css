@@ -1,0 +1,160 @@
+/* VoiceCloning */
+
+body {background: #fff;}
+a {text-decoration: none !important; color: #000;}
+
+h1 {
+    color: lightseagreen;
+    text-align: center;
+}
+
+hr {border-color: lightseagreen;}
+
+h2 {
+    color: lightcoral;
+    padding-top: 10px;
+}
+.link {color: lightcoral}
+
+.page_container {
+    padding: 0px 30px;
+}
+
+.disabled {
+    background-color: lightslategray !important;
+    cursor: not-allowed !important;
+}
+
+.border-for-upload {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px 0px 0 10px;
+    margin-bottom: 5px;
+}
+
+.create_project {
+    background: lightcoral;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+}
+.create_project:hover {
+    background: lightseagreen;
+}
+
+ .project-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 8px;
+    display: inline-block;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 1px 0px;
+    transition-duration: 0.4s;
+    transition-property: box-shadow;
+    opacity: 0.9;
+    cursor: pointer;
+    min-width: 295px;
+    max-width: 295px;
+    min-height: 180px;
+    max-height: 180px;
+}
+
+.project-card.create {
+    background: lightseagreen;
+    color: white
+}
+
+.project-card:hover {
+    opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.progress-label {
+    width: 70px;
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    background: lightcoral
+}
+.progress-label.create {background: white; color: lightseagreen;}
+.progress-label.ongoing {background: lightcoral;}
+.progress-label.failed {background: red;}
+.progress-label.ready {background: green;}
+
+.avatar {
+    width:50px; 
+    height:50px; 
+    border-radius:50%;
+}
+
+.footer {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Project Pop-up */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vw; /* 65% of viewport width */
+    height: 65vh; /* 40% of viewport height */
+    z-index: 1000;
+    overflow: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    text-align: right;
+    color: lightcoral !important
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    backdrop-filter: blur(8px); /* Blur effect */
+    z-index: 999; /* Ensure it's below the pop-up */
+}
+
+
+/* Create Project | Form */
+#projectFormContainer {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"],
+select,
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {cursor: pointer !important;}
