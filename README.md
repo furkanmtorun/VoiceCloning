@@ -1,9 +1,9 @@
 # 🤖 Voice Cloning
 - Users upload the audio records and clone the voice for given text.
 - Learning, having fun and hands-on experience with AWS & Terraform & Serverless architecture.
-- Screen recording of the app:
+- Screen recording of the web app:
 
-  https://github.com/user-attachments/assets/551aa3a3-fe2c-4f35-b5a0-c4f711144618
+  https://github.com/user-attachments/assets/b696a549-e263-46a9-a13b-b0e9e5068afb
 
 <br>
 
@@ -82,11 +82,7 @@ uvicorn main:app --reload
 <br>
 
 ## 👨🏻‍💻 Developer
-- Furkan M. Torun | Researcher and Data Scientist
-- Website: [furkanmtorun.github.io](https://furkanmtorun.github.io)
-- LinkedIn: [@furkanmtorun](https://www.linkedin.com/in/furkanmtorun)
-- Twitter: [@furkanmtorun](https://www.twitter.com/furkanmtorun)
-- Mail: [furkanmtorun[at]gmail[dot]com](mailto:furkanmtorun@gmail.com) 
-- Academics: [Google Scholar Profile](https://scholar.google.com/citations?user=d5ZyOZ4AAAAJ) 
+- Furkan M. Torun | [furkanmtorun[at]gmail[dot]com](mailto:furkanmtorun@gmail.com) 
+- [Website](https://furkanmtorun.github.io) | [LinkedIn](https://www.linkedin.com/in/furkanmtorun) | [Twitter @furkanmtorun](https://www.twitter.com/furkanmtorun) | [Google Scholar Profile](https://scholar.google.com/citations?user=d5ZyOZ4AAAAJ) 
 
 Moreover, please do not hesitate to comment via opening an issue via GitHub if you have any suggestions or feedback!
