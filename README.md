@@ -42,6 +42,7 @@ chmod +x 'scripts/provision_the_project.sh' && ./scripts/provision_the_project.s
 brew install cloud-nuke
 cloud-nuke aws --region eu-central-1
 chmod +x './scripts/force_delete_s3.sh' && ./scripts/force_delete_s3.sh
+chmod +x './scripts/cleanup_batch.sh' && ./scripts/cleanup_batch.sh
 ```
 
 ### 4. App
