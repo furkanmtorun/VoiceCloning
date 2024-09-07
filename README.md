@@ -1,15 +1,9 @@
 # 🤖 Voice Cloning
 - Users upload the audio records and clone the voice for given text.
 - Learning, having fun and hands-on experience with AWS & Terraform & Serverless architecture.
+- Screen recording of the app:
 
-## 🌐 Resources
-
-| Resource | Link |
-|---|---|
-| Web via Cloudfront | https://dzpqh0mwojrs9.cloudfront.net/ |
-| Web via S3 | http://voicecloning-website.s3-website.eu-central-1.amazonaws.com/ |
-| API via Cloudfront | http://d20hbh58zkqtxv.cloudfront.net/api/docs |
-| API via APIGateway | https://l481bschml.execute-api.eu-central-1.amazonaws.com/api/docs |
+  https://github.com/user-attachments/assets/551aa3a3-fe2c-4f35-b5a0-c4f711144618
 
 <br>
 
@@ -18,6 +12,17 @@
 ### 1. Architecture
 
 ![Architecture.png](./assets/architecture.png)
+
+---
+
+**Resource links (you can read out them from Terraform outputs):**
+
+| Resource | Link |
+|---|---|
+| Web via Cloudfront | https://<CDN_WEBAPP_ID>.cloudfront.net/ |
+| Web via S3 | http://voicecloning-website.s3-website.eu-central-1.amazonaws.com/ |
+| API via Cloudfront | http://<CDN_API_ID>.cloudfront.net/api/docs |
+| API via APIGateway | https://<APIGateway_API_ID>.execute-api.eu-central-1.amazonaws.com/api/docs |
 
 ### 2. AWS
 
@@ -70,6 +75,7 @@ uvicorn main:app --reload
   aws cloudfront create-invalidation --distribution-id "EZ0ZFJOIKT14T" --paths "/*"
   ```
 - Future: Remove the hardcoded variables in the code base and replace them with environment variables.
+- Future: Implement CI/CD to provision the infra and to deploy the app.
 - The model is forked and adapted from https://github.com/jnordberg/tortoise-tts.
   * However, this should be changed to main repo https://github.com/neonbjb/tortoise-tts.
 

@@ -43,7 +43,6 @@ resource "aws_iam_policy" "logs_policy" {
   })
 }
 
-# todo: remove
 resource "aws_iam_policy" "lambda_kms_policy" {
   name        = "LambdaKMSPolicy"
   description = "Policy to allow Lambda to decrypt using a specific KMS key"
