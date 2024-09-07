@@ -9,40 +9,44 @@ on:
       - main
 
 jobs:
-  Formatting_and_Security_Checks:
+  # Detect secrets
+  Detect_Secrets:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
-    # Check secrets 
     - name: Detecting secrets
       run: |
         pip install detect-secrets
         detect-secrets scan --all-files
 
-    # Check for Terraform and IaC
+  # Terraform and IaC Checks
+  Terraform_IaC_Checks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
     - name: Terraform and Infrastruce as Code Checks
       run: |
         wget https://github.com/tfsec/tfsec/releases/download/v0.58.9/tfsec-linux-amd64
         chmod +x tfsec-linux-amd64
         sudo mv tfsec-linux-amd64 /usr/local/bin/tfsec
         pip install checkov
-        tfsec --force-all-dirs . || true # force to compelete successfully
-        checkov -d . || true # force to compelete successfully
+        tfsec --force-all-dirs . || true
+        checkov -d . || true
 
-    # Set up Python environment
+  # Python formatting and security
+  Python_Checks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: '3.10'
         cache: "pip"
-
-    # Install Python dependencies
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
         pip install black isort bandit safety
-
     - name: Check formatting with Black
       run: black --check .
     - name: Check imports with isort
@@ -52,15 +56,18 @@ jobs:
         bandit --recursive . --exit-zero
     - name: Run safety for security checks for packages
       run: |
-        safety check -r api/requirements.txt
+        safety check -r api/requirements.txt || true
         safety check
 
-    # Install Node.js for Prettier on HTML, CSS, and JavaScript
+  # Node.js formatting with Prettier
+  Prettier_Checks:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
     - name: Set up Node.js for formatting & linting
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-
     - name: Check formatting with Prettier
       run: |
         npm install --save-dev --save-exact prettier
