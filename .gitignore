@@ -17,6 +17,10 @@ app/model_files/
 Icon
 
 
+# NodeJS
+node_modules/
+*.json
+
 # Thumbnails
 ._*
 
