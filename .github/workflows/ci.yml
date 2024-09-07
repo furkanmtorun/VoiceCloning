@@ -46,7 +46,7 @@ jobs:
     - name: Check formatting with Black
       run: black --check .
     - name: Check imports with isort
-      run: isort --check-only .
+      run: isort --profile black --check-only .
     - name: Run bandit for vulnerabilities
       run: |
         bandit --recursive . --exit-zero
