@@ -52,14 +52,14 @@ jobs:
         bandit --recursive . --exit-zero
     - name: Run safety for security checks for packages
       run: |
-        safety check -r requirements.txt
+        safety check -r api/requirements.txt
         safety check
 
     # Install Node.js for Prettier on HTML, CSS, and JavaScript
     - name: Set up Node.js for formatting & linting
       uses: actions/setup-node@v3
       with:
-        node-version: '14'  # Use Node.js 14.x
+        node-version: '14'
 
     - name: Check formatting with Prettier
       run: |
