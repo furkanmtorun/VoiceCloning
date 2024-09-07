@@ -3,8 +3,12 @@ import re
 import torch
 import torchaudio
 from tortoise.utils.audio import load_audio
-from transformers import (Wav2Vec2CTCTokenizer, Wav2Vec2FeatureExtractor,
-                          Wav2Vec2ForCTC, Wav2Vec2Processor)
+from transformers import (
+    Wav2Vec2CTCTokenizer,
+    Wav2Vec2FeatureExtractor,
+    Wav2Vec2ForCTC,
+    Wav2Vec2Processor,
+)
 
 
 def max_alignment(s1, s2, skip_character="~", record={}):

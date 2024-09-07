@@ -6,8 +6,7 @@ import warnings
 from distutils.dir_util import copy_tree
 
 import torchaudio
-from aws_utils import (download_s3_folder, get_project_details_by_id,
-                       upload_wav_to_s3)
+from aws_utils import download_s3_folder, get_project_details_by_id, upload_wav_to_s3
 from tortoise.api import TextToSpeech, classify_audio_clip
 from tortoise.utils.audio import load_audio, load_voice
 

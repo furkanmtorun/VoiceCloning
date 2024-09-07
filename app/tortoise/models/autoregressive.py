@@ -7,8 +7,7 @@ from tortoise.models.arch_util import AttentionBlock
 from tortoise.utils.typical_sampling import TypicalLogitsWarper
 from transformers import GPT2Config, GPT2PreTrainedModel, LogitsProcessorList
 from transformers.modeling_outputs import CausalLMOutputWithCrossAttentions
-from transformers.utils.model_parallel_utils import (assert_device_map,
-                                                     get_device_map)
+from transformers.utils.model_parallel_utils import assert_device_map, get_device_map
 
 
 def null_position_embeddings(range, dim):

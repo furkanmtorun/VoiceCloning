@@ -13,8 +13,11 @@ from tortoise.models.diffusion_decoder import DiffusionTts
 from tortoise.models.random_latent_generator import RandomLatentConverter
 from tortoise.models.vocoder import UnivNetGenerator
 from tortoise.utils.audio import denormalize_tacotron_mel, wav_to_univnet_mel
-from tortoise.utils.diffusion import (SpacedDiffusion, get_named_beta_schedule,
-                                      space_timesteps)
+from tortoise.utils.diffusion import (
+    SpacedDiffusion,
+    get_named_beta_schedule,
+    space_timesteps,
+)
 from tortoise.utils.tokenizer import VoiceBpeTokenizer
 from tortoise.utils.wav2vec_alignment import Wav2VecAlignment
 from tqdm import tqdm
