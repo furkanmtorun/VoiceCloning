@@ -15,12 +15,12 @@
 
 ---
 
-**Resource links (you can read out them from Terraform outputs):**
+**Resource links (you can read them from Terraform outputs):**
 
 | Resource | Link |
 |---|---|
 | Web via Cloudfront | https://<CDN_WEBAPP_ID>.cloudfront.net/ |
-| Web via S3 | http://voicecloning-website.s3-website.eu-central-1.amazonaws.com/ |
+| Web via S3 | http://<S3_BUCKET_NAME>.s3-website.eu-central-1.amazonaws.com/ |
 | API via Cloudfront | http://<CDN_API_ID>.cloudfront.net/api/docs |
 | API via APIGateway | https://<APIGateway_API_ID>.execute-api.eu-central-1.amazonaws.com/api/docs |
 
